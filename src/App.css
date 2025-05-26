@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+.card-container {
+  perspective: 1000px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  width: 250px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-container:hover .card {
+  transform: rotateY(180deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  color: #333;
+  text-align: center;
+  background: #fffaf0; /* Default fallback */
 }
 
-.App-link {
-  color: #61dafb;
+.card-front {
+  background: linear-gradient(135deg, #ffffff, #fdf6e3); /* White to cream */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-back {
+  background: linear-gradient(135deg, #fdf6e3, #ffffff); /* Cream to white */
+  transform: rotateY(180deg);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+.card-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #a0522d; /* Sienna - adds contrast */
+  margin-top: 10px;
+}
+
+.add-to-cart-btn {
+  background-color: #f5deb3; /* Wheat tone */
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ffe4b5; /* Lighter wheat */
+  transform: translateY(-3px);
 }

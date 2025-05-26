@@ -1,0 +1,46 @@
+.login-dialog {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  z-index: 1000;
+}
+
+.login-dialog h2 {
+  margin-bottom: 10px;
+}
+
+.login-dialog input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-dialog button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-dialog p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-dialog span {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
